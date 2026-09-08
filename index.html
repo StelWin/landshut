@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="План встречи в Ландсхуте: варианты на хорошую погоду и на любую.">
+<meta property="og:title" content="Совместное время в Ландсхуте">
+<meta property="og:description" content="Куда пойти, когда соберёмся.">
+<meta property="og:image" content="img/burg-trausnitz.jpg">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏰</text></svg>">
+<style>*{box-sizing:border-box}html{color-scheme:light dark}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Совместное время в Ландсхуте</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ink:#131C25;
+  --ink-2:#4E5F70;
+  --ink-3:#7C8B99;
+  --ground:#EDF1F5;
+  --surface:#FFFFFF;
+  --band-fair:#E3ECF5;
+  --band-any:#EAE6E2;
+  --line:#D2DBE3;
+  --line-soft:#E1E8EE;
+  --blue:#2A5FA5;
+  --blue-deep:#1B3F73;
+  --brick:#A9482F;
+  --shadow:0 1px 2px rgba(19,28,37,.06), 0 12px 28px -18px rgba(19,28,37,.35);
+  --hero-scrim:linear-gradient(180deg, rgba(12,26,44,.20) 0%, rgba(12,26,44,.62) 55%, rgba(12,26,44,.86) 100%);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#E7EDF3; --ink-2:#A3B2C0; --ink-3:#7C8B99;
+    --ground:#0E151C; --surface:#161F28;
+    --band-fair:#132030; --band-any:#221E1B;
+    --line:#2A3540; --line-soft:#222C36;
+    --blue:#79A8E0; --blue-deep:#A8C6EC; --brick:#D98362;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 30px -18px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E7EDF3; --ink-2:#A3B2C0; --ink-3:#7C8B99;
+  --ground:#0E151C; --surface:#161F28;
+  --band-fair:#132030; --band-any:#221E1B;
+  --line:#2A3540; --line-soft:#222C36;
+  --blue:#79A8E0; --blue-deep:#A8C6EC; --brick:#D98362;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 30px -18px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Golos Text","Helvetica Neue",Arial,sans-serif;
+  font-size:16.5px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.narrow{max-width:70ch}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--blue-deep)}
+.hero img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:50% 62%;
+}
+.hero .scrim{position:absolute;inset:0;background:var(--hero-scrim)}
+.hero .inner{
+  position:relative;padding:96px 24px 34px;
+  max-width:1060px;margin:0 auto;
+  min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.eyebrow{
+  font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.78);margin:0 0 14px;
+}
+h1{
+  font-family:"Unbounded","Golos Text",sans-serif;
+  font-weight:700;font-size:clamp(2.3rem,6.2vw,4rem);
+  line-height:1.02;letter-spacing:-.02em;margin:0;color:#fff;
+  text-wrap:balance;
+}
+.hero .sub{
+  margin:16px 0 0;max-width:44ch;color:rgba(255,255,255,.86);
+  font-size:1.05rem;
+}
+.hero .credit{
+  position:absolute;right:24px;bottom:10px;
+  font-family:"JetBrains Mono",monospace;font-size:10px;
+  letter-spacing:.06em;color:rgba(255,255,255,.42);
+}
+
+/* ---------- weather bands ---------- */
+.band{padding:56px 0 8px}
+.band--fair{background:var(--band-fair)}
+.band--any{background:var(--band-any)}
+
+.band-head{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.band-head svg{flex:none;width:30px;height:30px}
+.band--fair .band-head svg{color:var(--blue)}
+.band--any .band-head svg{color:var(--brick)}
+.band-head h2{
+  font-family:"Unbounded","Golos Text",sans-serif;
+  font-weight:500;font-size:clamp(1.35rem,3.4vw,1.9rem);
+  letter-spacing:-.015em;margin:0;line-height:1.15;
+}
+
+
+/* ---------- activity rows ---------- */
+.act{
+  display:grid;grid-template-columns:minmax(0,29fr) minmax(0,71fr);
+  gap:30px;align-items:start;
+  padding:32px 0;border-top:1px solid var(--line);
+}
+.act:first-of-type{border-top:none;padding-top:6px}
+.act h3{
+  font-family:"Golos Text",sans-serif;font-weight:600;
+  font-size:1.16rem;line-height:1.3;margin:0 0 8px;letter-spacing:-.005em;
+  text-wrap:balance;
+}
+.act p{margin:0;color:var(--ink-2);font-size:.94rem}
+.act-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.tag{
+  display:inline-block;
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);border:1px solid var(--line);
+  border-radius:2px;padding:4px 8px;
+}
+.map{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  color:var(--blue);border:1px solid currentColor;
+  border-radius:2px;padding:4px 9px;
+  transition:background-color .15s ease, color .15s ease;
+}
+.map svg{width:11px;height:11px;flex:none}
+.map:hover{background:var(--blue);color:var(--surface)}
+.band--any .map{color:var(--brick)}
+.band--any .map:hover{background:var(--brick);color:var(--surface)}
+.map:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.shots{display:grid;gap:12px;grid-template-columns:1fr}
+.shots.two{grid-template-columns:1fr 1fr}
+figure{margin:0}
+figure button{
+  display:block;width:100%;padding:0;border:1px solid var(--line-soft);
+  background:var(--surface);border-radius:5px;overflow:hidden;cursor:zoom-in;
+  box-shadow:var(--shadow);
+}
+figure img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.shots.two figure img{aspect-ratio:1/1}
+figure button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* ---------- transport ---------- */
+.transport{background:var(--surface);border-top:1px solid var(--line);padding:56px 0 64px;margin-top:56px}
+.transport h2{
+  font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;
+  font-size:clamp(1.35rem,3.4vw,1.9rem);margin:0 0 8px;letter-spacing:-.015em;
+}
+.transport .lede{margin:0 0 32px;color:var(--ink-2);max-width:56ch;font-size:.95rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;max-width:760px}
+.col h3{
+  font-family:"JetBrains Mono",monospace;font-weight:500;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid currentColor;
+}
+.col--has h3{color:var(--blue)}
+.col--none h3{color:var(--brick)}
+.col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.col li{
+  padding:9px 0;border-bottom:1px solid var(--line-soft);
+  font-size:1rem;display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+}
+.col li span{
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--ink-3);
+  letter-spacing:.08em;
+}
+footer{
+  padding:22px 0 40px;color:var(--ink-3);font-size:.82rem;
+  font-family:"JetBrains Mono",monospace;letter-spacing:.04em;
+}
+
+/* ---------- lightbox ---------- */
+dialog#lb{
+  border:none;padding:0;background:transparent;max-width:96vw;max-height:96vh;
+}
+dialog#lb::backdrop{background:rgba(8,14,20,.88)}
+dialog#lb img{display:block;max-width:96vw;max-height:90vh;border-radius:4px}
+dialog#lb form{position:absolute;top:-2px;right:-2px}
+dialog#lb button{
+  background:rgba(0,0,0,.55);color:#fff;border:none;font-size:20px;line-height:1;
+  padding:9px 13px;border-radius:0 4px 0 4px;cursor:pointer;
+}
+
+@media (max-width:760px){
+  .act{grid-template-columns:1fr;gap:16px;padding:26px 0}
+  .hero .inner{min-height:320px;padding-top:72px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+</head>
+<body>
+<header class="hero">
+  <img src="img/burg-trausnitz.jpg" alt="Бург Траусниц над Ландсхутом">
+  <div class="scrim"></div>
+  <div class="inner">
+    <p class="eyebrow">План встречи · Ландсхут</p>
+    <h1>Совместное время</h1>
+  </div>
+  <p class="credit">Бург Траусниц</p>
+</header>
+
+
+<section class="band band--fair">
+  <div class="wrap">
+    <div class="band-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2" fill="none"></circle>
+        <path d="M12 2.4v2.6M12 19v2.6M2.4 12h2.6M19 12h2.6M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"></path>
+      </svg>
+      <h2>По хорошей погоде</h2>
+    </div>
+
+    <article class="act">
+      <div>
+        <h3>На озеро с лодкой или SUP</h3>
+        <p>Большая надувная лодка и SUP-доска уже есть. SUP — фановая штука, заходит всем, получается у всех. Нужны купальники.</p>
+        <div class="act-meta"><span class="tag">Полдня</span><a class="map" href="https://www.google.com/maps/place/Naherholungsgebiet+Gretlm%C3%BChle/@48.5750981,12.2286586,17z/data=!4m6!3m5!1s0x479e284326c618d5:0xc57653c8addc0d60!8m2!3d48.5750981!4d12.2286586!16s%2Fg%2F11bc8ytdwf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.2-8 12.1-8 12.1s-8-6.9-8-12.1a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.9"></circle></svg> На карте</a></div>
+      </div>
+      <div class="shots two">
+        <figure><button type="button" data-full="img/sup.jpg"><img src="img/sup.jpg" alt="SUP-доска на берегу озера"></button></figure>
+        <figure><button type="button" data-full="img/boot.jpg"><img src="img/boot.jpg" alt="Надувная лодка перед выездом"></button></figure>
+      </div>
+    </article>
+
+    <article class="act">
+      <div>
+        <h3>Подняться к замку, спуститься по лесу</h3>
+        <p>Бург Траусниц наверху, с террасы вид на всю старую часть города. Обратно спускаемся по лесу.</p>
+        <div class="act-meta"><span class="tag">3 часа</span><a class="map" href="https://www.google.com/maps/place/Burg+Trausnitz/@48.530922,12.1509238,17z/data=!3m1!4b1!4m6!3m5!1s0x479e2670f68b46d5:0x98c1428f00e19c60!8m2!3d48.530922!4d12.1534987!16zL20vMDlfNTRr" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.2-8 12.1-8 12.1s-8-6.9-8-12.1a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.9"></circle></svg> На карте</a></div>
+      </div>
+      <div class="shots two">
+        <figure><button type="button" data-full="img/burg-trausnitz.jpg"><img src="img/burg-trausnitz.jpg" alt="Бург Траусниц со стороны города"></button></figure>
+        <figure><button type="button" data-full="img/blick-altstadt.jpg"><img src="img/blick-altstadt.jpg" alt="Вид на старый город со стен замка"></button></figure>
+      </div>
+    </article>
+
+    <article class="act">
+      <div>
+        <h3>Старый город, музей и магазины</h3>
+        <p>Пройти Альтштадт от ворот до Мартинскирхе — самой высокой кирпичной церкви в мире и второго по высоте кирпичного здания. По пути выставка в музее, дальше магазины в центре.</p>
+        <div class="act-meta"><span class="tag">2 часа</span><a class="map" href="https://www.google.com/maps/place/Altstadt,+84028+Landshut/@48.5358992,12.1488208,17z/data=!3m1!4b1!4m6!3m5!1s0x479e267392e11bbb:0xef0aa8b4dece06ed!8m2!3d48.5358992!4d12.1513957!16s%2Fg%2F1vq9l86g" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.2-8 12.1-8 12.1s-8-6.9-8-12.1a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.9"></circle></svg> На карте</a></div>
+      </div>
+      <div class="shots two">
+        <figure><button type="button" data-full="img/ladntor.jpg"><img src="img/ladntor.jpg" alt="Городские ворота в начале старого города"></button></figure>
+        <figure><button type="button" data-full="img/altstadt.jpg"><img src="img/altstadt.jpg" alt="Улица Альтштадт с цветными фасадами"></button></figure>
+      </div>
+    </article>
+
+    <article class="act">
+      <div>
+        <h3>Мини-гольф</h3>
+        <p>Уютная площадка в парке. Закатить шарик в лунку за наименьшее число ударов — навыков не требует, хорошо расслабляет.</p>
+        <div class="act-meta"><span class="tag">2 часа</span><a class="map" href="https://www.google.com/maps/place/1.+Bahnengolf-Club+Landshut+e.V./@48.555117,12.178565,16z/data=!4m6!3m5!1s0x479e2626ae99ac97:0x9b22d0aeb9efeeaa!8m2!3d48.555117!4d12.178565!16s%2Fg%2F1tfpt7pn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.2-8 12.1-8 12.1s-8-6.9-8-12.1a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.9"></circle></svg> На карте</a></div>
+      </div>
+      <div class="shots">
+        <figure><button type="button" data-full="img/minigolf.jpg"><img src="img/minigolf.jpg" alt="Дорожки мини-гольфа в парке"></button></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band band--any">
+  <div class="wrap">
+    <div class="band-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M7.2 17.5a4.3 4.3 0 0 1-.4-8.6 5.6 5.6 0 0 1 10.7-1.2 3.9 3.9 0 0 1 .3 7.7"></path>
+        <path d="M9 19.4l-1 2.2M13 19.4l-1 2.2M17 19.4l-1 2.2"></path>
+      </svg>
+      <h2>По любой погоде</h2>
+    </div>
+
+    <article class="act">
+      <div>
+        <h3>Бильярд</h3>
+        <p>Несколько столов, места хватит всем сразу — можно играть двумя компаниями.</p>
+        <div class="act-meta"><span class="tag">2 часа</span><a class="map" href="https://www.google.com/maps/place/LA+Bowling/@48.5502119,12.1408367,16z/data=!3m1!4b1!4m6!3m5!1s0x479e25e2d4dfa46b:0x60ff6b16a666ae0d!8m2!3d48.550212!4d12.1457076!16s%2Fg%2F11b77x21vy" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.2-8 12.1-8 12.1s-8-6.9-8-12.1a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.9"></circle></svg> На карте</a></div>
+      </div>
+      <div class="shots">
+        <figure><button type="button" data-full="img/billard.jpg"><img src="img/billard.jpg" alt="Бильярдный зал с несколькими столами"></button></figure>
+      </div>
+    </article>
+
+    <article class="act">
+      <div>
+        <h3>La Notizia — пиццерия у Назара</h3>
+        <p>Заодно познакомим владельца с командой: хороший шанс сделать его нашим клиентом. Стол лучше заказать заранее.</p>
+        <div class="act-meta"><span class="tag">Обед или ужин</span><a class="map" href="https://www.google.com/maps/place/Pizzeria+La+Notizia/@48.5696815,12.1674548,17z/data=!3m2!4b1!5s0x479e28b06eabe0f3:0x8e59077b6ba01716!4m6!3m5!1s0x479e29005fa1b5d3:0xb5cf1b4ce2754bd3!8m2!3d48.5696815!4d12.1700297!16s%2Fg%2F11y34_r39x" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.4c0 5.2-8 12.1-8 12.1s-8-6.9-8-12.1a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.9"></circle></svg> На карте</a></div>
+      </div>
+      <div class="shots two">
+        <figure><button type="button" data-full="img/la-notizia-aussen.jpg"><img src="img/la-notizia-aussen.jpg" alt="Пиццерия La Notizia снаружи"></button></figure>
+        <figure><button type="button" data-full="img/la-notizia-innen.jpg"><img src="img/la-notizia-innen.jpg" alt="Накрытый длинный стол в зале пиццерии"></button></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="transport">
+  <div class="wrap">
+    <h2>Транспорт</h2>
+    <p class="lede">У троих проездной уже есть, четверым нужен билет или место в машине.</p>
+    <div class="cols">
+      <div class="col col--has">
+        <h3>Deutschlandticket есть</h3>
+        <ul>
+          <li>Владислав <span>✓</span></li>
+          <li>Анастасия <span>✓</span></li>
+          <li>Лера <span>✓</span></li>
+        </ul>
+      </div>
+      <div class="col col--none">
+        <h3>Deutschlandticket нет</h3>
+        <ul>
+          <li>Станислав <span>—</span></li>
+          <li>Мария <span>—</span></li>
+          <li>Александр <span>—</span></li>
+          <li>Роза <span>—</span></li>
+        </ul>
+      </div>
+    </div>
+    <footer>Нажмите на любое фото, чтобы открыть его целиком.</footer>
+  </div>
+</section>
+
+<dialog id="lb">
+  <form method="dialog"><button aria-label="Закрыть">×</button></form>
+  <img alt="">
+</dialog>
+
+<script>
+  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('figure button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var img = b.querySelector('img');
+      lbImg.src = b.dataset.full;
+      lbImg.alt = img.alt;
+      lb.showModal();
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+</script>
+
+</body>
+</html>
