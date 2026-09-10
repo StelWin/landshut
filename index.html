@@ -97,7 +97,7 @@ h1{
 }
 
 /* ---------- weather bands ---------- */
-.band{padding:56px 0 8px}
+.band{padding:56px 0 48px}
 .band--fair{background:var(--band-fair)}
 .band--any{background:var(--band-any)}
 
@@ -159,13 +159,13 @@ figure img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/
 figure button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
 /* ---------- transport ---------- */
-.transport{background:var(--surface);border-top:1px solid var(--line);padding:56px 0 64px;margin-top:56px}
+.transport{background:var(--surface);border-top:1px solid var(--line);padding:56px 0 64px}
 .transport h2{
   font-family:"Unbounded","Golos Text",sans-serif;font-weight:500;
   font-size:clamp(1.35rem,3.4vw,1.9rem);margin:0 0 8px;letter-spacing:-.015em;
 }
 .transport .lede{margin:0 0 32px;color:var(--ink-2);max-width:56ch;font-size:.95rem}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;max-width:880px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;max-width:760px}
 .col h3{
   font-family:"JetBrains Mono",monospace;font-weight:500;
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;
@@ -173,7 +173,6 @@ figure button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 }
 .col--has h3{color:var(--blue)}
 .col--none h3{color:var(--brick)}
-.col--maybe h3{color:var(--ink-2)}
 .col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
 .col li{
   padding:9px 0;border-bottom:1px solid var(--line-soft);
@@ -182,10 +181,6 @@ figure button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .col li span{
   font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--ink-3);
   letter-spacing:.08em;
-}
-footer{
-  padding:22px 0 40px;color:var(--ink-3);font-size:.82rem;
-  font-family:"JetBrains Mono",monospace;letter-spacing:.04em;
 }
 
 /* ---------- lightbox ---------- */
@@ -336,14 +331,7 @@ dialog#lb button{
           <li>Роза <span>—</span></li>
         </ul>
       </div>
-      <div class="col col--maybe">
-        <h3>Под вопросом</h3>
-        <ul>
-          <li>Антон <span>?</span></li>
-        </ul>
-      </div>
     </div>
-    <footer>Нажмите на любое фото, чтобы открыть его целиком.</footer>
   </div>
 </section>
 
