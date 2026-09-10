@@ -165,7 +165,7 @@ figure button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
   font-size:clamp(1.35rem,3.4vw,1.9rem);margin:0 0 8px;letter-spacing:-.015em;
 }
 .transport .lede{margin:0 0 32px;color:var(--ink-2);max-width:56ch;font-size:.95rem}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;max-width:760px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;max-width:880px}
 .col h3{
   font-family:"JetBrains Mono",monospace;font-weight:500;
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;
@@ -173,6 +173,7 @@ figure button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 }
 .col--has h3{color:var(--blue)}
 .col--none h3{color:var(--brick)}
+.col--maybe h3{color:var(--ink-2)}
 .col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
 .col li{
   padding:9px 0;border-bottom:1px solid var(--line-soft);
@@ -316,14 +317,14 @@ dialog#lb button{
 <section class="transport">
   <div class="wrap">
     <h2>Транспорт</h2>
-    <p class="lede">У троих проездной уже есть, четверым нужен билет или место в машине.</p>
+    <p class="lede">У троих проездной уже есть, остальным нужен билет или место в машине.</p>
     <div class="cols">
       <div class="col col--has">
         <h3>Deutschlandticket есть</h3>
         <ul>
           <li>Владислав <span>✓</span></li>
           <li>Анастасия <span>✓</span></li>
-          <li>Лера <span>✓</span></li>
+          <li>Валерий <span>✓</span></li>
         </ul>
       </div>
       <div class="col col--none">
@@ -333,6 +334,12 @@ dialog#lb button{
           <li>Мария <span>—</span></li>
           <li>Александр <span>—</span></li>
           <li>Роза <span>—</span></li>
+        </ul>
+      </div>
+      <div class="col col--maybe">
+        <h3>Под вопросом</h3>
+        <ul>
+          <li>Антон <span>?</span></li>
         </ul>
       </div>
     </div>
